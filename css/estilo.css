@@ -1,9 +1,90 @@
-body {
-    background: #818181;
+:root,
+:root[data-theme="dark"] {
+    --primary-color: #ebebeb;
+    --primary-bg: #1d1d1d;
+    --hover-menu: #898989;
+    --icon-color: #169adc;
+    --icone-tema: #d7b21e;
 }
 
-/* img {
-    width: 10rem;    largura 
-    height: 10rem;   altura 
+:root[data-theme="light"] {
+    --primary-color: #1d1d1d;
+    --primary-bg: #ebebeb;
+    --hover-menu: #898989;
+
+}
+
+body{
+    background: var(--primary-bg);  /* fundo */
+    color: var(--primary-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px; 
+}
+
+a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover{
+  color: var(--hover-menu)
+}
+
+i {
+  color: var(--icon-color);
+}
+
+/* Reset CSS  */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* fim reset  */
+
+
+/* header  */
+#header {
+    display: flex;
+    flex-flow: row wrap;
+    /* Coloca o conteúdo em linha e permite a quebra de linha. */
+    justify-content: space-between;
+    /* Os itens dentro do container flexível serão distribuídos de maneira uniforme ao longo do eixo principal, com espaços iguais entre eles.  */
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    z-index: 2;
+}
+
+/* .header-logo .logo */
+.logo {  /* img */
+    width: 3.25rem;  /* comprimento */
+    height: 3.25rem;  /* altura  */
+}
+
+
+.header-toggle {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#toggleTheme {
+    color: var(--icone-tema);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.menu {   /* UL */
+    display: flex;
+    align-items: center;
+    background: var(--primary-bg);
+    gap: 1rem;
+}
+
+
+/* .header-nav {
+    display: none;
 }
  */
+

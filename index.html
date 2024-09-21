@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🍺 Gustavo Feriani | Meu Website </title>
     
-    <!-- Estilo CSS -->
     <link rel="stylesheet" href="css/estilo.css">
-    
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
 
-<body>
-    <header>
-        <!-- navigation -->
-        <nav> <!-- menu desktop -->
-            <ul class="menu-principal">
-                <li> Home </li>
-                <li> Projetos </li>
-                <li> Sobre </li>
-                <li> Contato </li>  
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  </head>
+  <body>
+
+    <header id="header"> <!-- cabeçalho -->
+        <nav class="header-nav">
+       
+            <ul class="menu menu-principal">
+                <li class="menu-item">
+                   <a class="menu-link active" href="#home"> 
+                       <span class="menu-text"> Home </span> 
+                   </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="#projetos">
+                       <span class="menu-text"> Projetos </span> 
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="#sobre">
+                       <span class="menu-text"> Sobre </span> 
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="#contato">
+                       <span class="menu-text"> Contato </span> 
+                    </a>
+                </li>
             </ul>
         </nav>
-
-        <!-- logo -->
-        <div class="">
+        
+        <div class="header-logo">  <!-- area do logo -->
             <a href="#home">
-               <img src="img/logo.png" alt="">
+                <img class="logo" src="img/logo.png" alt="">
             </a>
+        </div><!-- Fim area do logo -->
+
+        <div class="header-toggle">
+            <i id="toggleTheme" class="bi bi-sun"></i>
         </div>
+    </header>
 
-        <div class="">
-            <i class="bi bi-sun"> </i>
-        </div>
-    </header> <!-- fim header -->
-    
-
-</body>
-
+  </body>
 </html>
