@@ -90,8 +90,40 @@ i {
     gap: .5rem; 
 } */
 
-/* .header-nav {
+.header-nav {
     display: none;
 }
- */
 
+
+/* Menu Mobile */
+
+.menu-mobile {
+    width: 100vw; /*V W = Viewport Width */
+    position: fixed;
+    bottom: 0;
+    justify-content: space-between;
+    border-top: 1px solid red;
+}
+
+.menu-mobile .menu-link {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+}
+
+/* Responsividade 
+Responsivo
+*/
+
+@media (min-width: 768px) {
+    #header {
+       position: fixed;
+       padding: 1rem 6rem;
+    }
+    .nav-mobile {
+        display: none;
+    }
+    .header-nav{
+        display: flex;
+    }
+}
