@@ -35,14 +35,13 @@ i {
 }
 
 /* Reset CSS  */
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 /* fim reset  */
-
 
 /* header  */
 #header {
@@ -63,7 +62,6 @@ i {
     height: 3.25rem;  /* altura  */
 }
 
-
 .header-toggle {
     display: flex;
     justify-content: flex-end;
@@ -82,6 +80,15 @@ i {
     gap: 1rem;
 }
 
+.menu-item {
+    width: 100%;
+}
+
+/* .menu-link {
+    display: flex;
+    align-items: center;
+    gap: .5rem; 
+} */
 
 /* .header-nav {
     display: none;
