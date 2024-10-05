@@ -1,13 +1,15 @@
 :root,
 :root[data-theme="dark"] {
-    --primary-color: #ebebeb;
-    --primary-bg: #1d1d1d;
+    --primary-color: #ebebeb; /*color = texto */
+    --primary-bg: #1d1d1d;  /*bg = fundo */
     --hover-menu: #898989;
     --menu-texto:  #ebebeb;
 
     --icon-color: #169adc;
     --icone-tema: #d7b21e;
     --hover-social: #169adc;
+
+    --cor-titulo: #c042eb;
 }
 
 :root[data-theme="light"] {
@@ -16,6 +18,8 @@
     --hover-menu: #898989;
     --menu-texto: #1d1d1d;
     --hover-social:#169adc;
+
+    --cor-titulo: #1d1d1d;
 }
 
 /* CSS Geral */
@@ -249,7 +253,65 @@ p {
     gap: 4rem;
 }
 
+.projeto-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
+.card-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card-title {  /* H3 */
+    font-size: 2rem;
+    color: var(--cor-titulo);
+    font-weight: 100;
+    /* font-family: ; */
+}
+
+.card-descricao {  /*P = paragrafo*/
+    color: var(--cor-texto);
+   /*  font-size: ;
+    font-family: ; */
+}
+
+.card-lista, .sobre-lista { /*estrutura lista */
+    margin-left: 1.25rem;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.card-item, .sobre-item{  /* topicos lista */
+    /* list-style: none; */
+    margin-top: 5px;
+    list-style: disc;
+}
+
+.card-button, .card-descricao{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.card-button .btn {
+    padding: .65rem 1.25rem;
+    margin-top: 15px;
+}
+
+.card-button .btn span {
+    font-size: 1rem;
+    /* color: var(--texto-botao); */
+}
+
+.projetos .btn {
+    width: auto;
+    margin: auto;
+}
 
 
 
@@ -274,12 +336,65 @@ p {
         font-size: 5rem;
     }
     h2 {
-
-    }
-    h3 {
-
+        font-size: 3rem;
     }
     #home, .projetos, .sobre, .contato  {
         padding: 8rem 6rem 4rem 6rem;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .projeto-card {
+        flex-direction: row;
+    }
+    
+    .card-cover {
+        width: 55%;
+    }
+        
+}
+
+@media (min-width: 1200px) {
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    #home {
+        padding: 10rem 6rem 2rem;
+    }
+
+    .main-content .btn {
+        width: auto;
+    }
+    
+    p, span, li {
+        font-size: 1.15rem;
+    }
+    .card-button .btn, 
+    .descricao-button .btn {
+        width: auto;
+    }
+}
+@media (min-width: 1400px) {
+    h1 {
+        font-size: 6.25rem;
+    }
+    h2{
+        font-size: 4.5rem;
+    }
+    h3 {
+        font-size: 3.25rem;
+    }
+    .header {
+        padding: 12rem 15rem 2rem;
+    }
+    .projetos, .sobre, .contato {
+        padding: 10rem 15rem 4rem;
     }
 }
