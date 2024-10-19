@@ -1,4 +1,3 @@
-
 const toggleTheme = document.getElementById("toggleTheme");
 const rootHtml = document.documentElement;
 const accordionHeaders = document.querySelectorAll(".accordion-header");
@@ -32,15 +31,3 @@ menuLinks.forEach(item => {
         item.classList.add("active");
     })
 })
-
-/**
-     * Animation on scroll
-     */
-window.addEventListener('load', () => {
-    AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false
-    })
-});

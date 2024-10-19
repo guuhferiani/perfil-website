@@ -1,88 +1,115 @@
-:root,
-:root[data-theme="dark"] {
-    --primary-color: #ebebeb; /*color = texto */
-    --primary-bg: #1d1d1d;  /*bg = fundo */
-    --hover-menu: #898989;
-    --menu-texto:  #ebebeb;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap');
 
-    --icon-color: #169adc;
-    --icone-tema: #d7b21e;
-    --hover-social: #169adc;
+/* Definir o tema dark do site */
+:root, 
+:root[data-theme='dark'] {
+    --primary-color: #F0F0F0;
+    --primary-bg-color: #111217;
+    --secondary-bg-color: #28292E;
+    --primary-border-color: #28292E;
+    --secondary-border-color: #56575A;
+    --title-color: #F0F0F0;
+    --text-color: #8f8f8f;
+    --link-color: #F0F0F0;
+    --icon-color: #C7C8C9;
 
-    --cor-titulo: #c042eb;
 }
+:root[data-theme='light'] {
+    --primary-color: #0B0B0F;
 
-:root[data-theme="light"] {
-    --primary-color: #1d1d1d;
-    --primary-bg: #ebebeb;
-    --hover-menu: #898989;
-    --menu-texto: #1d1d1d;
-    --hover-social:#169adc;
+	--primary-bg-color: #E9E9E9;
+	--secondary-bg-color: #C7C8C9;
+	--primary-border-color: #C7C8C9;
+	--secondary-border-color: #9A9A9C;
 
-    --cor-titulo: #1d1d1d;
+	--title-color: #0B0B0F;
+	--text-color: #a3a2a2;
+	--link-color: #0B0B0F;
+	--icon-color: #56575A;
 }
+/*
+definindo variáveis de cores para um tema claro e um tema escuro
 
-/* CSS Geral */
-body{
-    background: var(--primary-bg);  /* fundo */
-    color: var(--primary-color);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 22px; 
+ROOT refere-se ao elemento raiz do documento HTML
+
+seletor :root define as variáveis globais
+
+Isso oferece uma maneira flexível de definir valores
+que podem ser reutilizados em todo o seu CSS e facilmente atualizados de um único lugar.
+*/
+html[data-theme='light'] .logo {
+    filter:invert(1);
 }
-
-html[data-theme="light"] .logo {
-    filter: invert(1);
+html[data-theme='light'] .tecnologia-logo {
+    filter: invert(80%);
 }
-
-a{
+/*  (*) reset do CSS */
+* {
+   margin: 0px;  /* margem */
+   padding: 0px;  /* preenchimento // espaçamento */ 
+   box-sizing: border-box;
+    /* 
+    A propriedade box-sizing em CSS é usada para alterar o modelo de caixa de um elemento.
+    O valor border-box é usado para garantir que a largura e a altura de um elemento
+    incluam as bordas e o preenchimento, em vez de apenas o conteúdo.
+    Quando você define box-sizing: border-box;, está dizendo ao navegador
+    para calcular a largura e a altura total de um elemento,
+    incluindo a largura das bordas e o preenchimento, e não apenas o conteúdo.
+    */
+   vertical-align: baseline;
+   list-style: none;
+   scrollbar-width: thin;
+   scrollbar-color: var(--secondary-bg-color) transparent;
+}
+body {
+    background: var(--primary-bg-color);
+    font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+a {
     text-decoration: none;
+    color: var(--text-color);
+}
+a:hover {
     color: var(--primary-color);
 }
-
-a:hover{
-  color: var(--hover-menu)
-}
-
 i {
-  color: var(--icon-color);
+    color: var(--icon-color);
 }
-
 b {
-    font-weight: 600;
+    font-weight: 400;
 }
-
 h1 {
     font-size: 2.5rem;
     font-weight: 200;
 }
-
 h2 {
-    
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 0.4rem;
 }
-
 h3 {
-
+    font-size: 1.55rem;
+    text-align: left;
 }
-
-p, span, li{
+h4 {
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 1.15rem;
+    text-align: left;
+}
+h1, h2, h3{
+    font-family: 'League Spartan', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    color: var(--title-color);
+    font-weight: 200;
+}
+p, span, li {
     font-size: 1rem;
 }
-
 p {
     text-align: justify;
 }
-
-
-/* Reset CSS  */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-}
-/* fim reset  */
-
-/* header  */
 #header {
     display: flex;
     flex-flow: row wrap;
@@ -93,242 +120,362 @@ p {
     width: 100%;
     padding: 0.5rem 1rem;
     z-index: 2;
-    background: var(--primary-bg);
 }
 
-/* .header-logo .logo */
-.logo {  /* img */
-    width: 3.25rem;  /* comprimento */
-    height: 3.25rem;  /* altura  */
+.header-logo .logo {
+    width: 3.25rem;
+    height: 3.25rem;
 }
-
 .header-toggle {
     display: flex;
     justify-content: flex-end;
 }
-
 #toggleTheme {
-    color: var(--icone-tema);
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: var(--icon-color);
     cursor: pointer;
+    transition: ease-in-out .4s;
 }
-
-.menu {   /* UL */
+.menu{
     display: flex;
+    /*  Torna o elemento um flex container automaticamente
+    transformando todos os seus filhos diretos em flex itens */
     align-items: center;
-    background: var(--primary-bg);
+    background: var(--primary-bg-color);
     gap: 1rem;
 }
-
-.menu-item {
+.menu-item{
     width: 100%;
 }
-
-/* .menu-link {
-    display: flex;
+.menu-link{
+    display: flex; 
+    /*  Torna o elemento um flex container automaticamente
+    transformando todos os seus filhos diretos em flex itens */
     align-items: center;
-    gap: .5rem; 
-} */
-
-.header-nav {
-    display: none;
+    gap: .5rem;  
+    /* usada para definir o espaço entre os elementos
+    criar espaçamento uniforme entre os elementos
+    */
 }
-
-
-/* Menu Mobile */
-
 .menu-mobile {
-    width: 100vw; /*V W = Viewport Width */
+    width: 100vw;  /* V W = viewport width*/
     position: fixed;
     bottom: 0;
     justify-content: space-between;
-    border-top: 1px solid red;
+    border-top: 1px solid var(--primary-border-color);   
 }
-
 .menu-mobile .menu-link {
     flex-direction: column;
+    /* definir a direção principal dos itens em uma coluna vertical */
     justify-content: center;
     padding: 0.5rem 1rem;
 }
-
-.menu-link.active .menu-icon,
+.menu-link.active .menu-icon, 
 .menu-link.active .menu-text,
-.menu-link:hover .menu-icon,
+.menu-link:hover .menu-icon, 
 .menu-link:hover .menu-text {
-    color: #169adc;  /*cor de link */
+  color: var(--link-color);
+  
 }
-
-.menu-icon, .menu-text {
-    color: var(--menu-texto);
+.menu-icon, .menu-text{
+    color: var(--text-color);
     font-weight: 600;
 }
-
 .menu-icon{
     font-size: 1.5rem;
 }
-
 .menu-text {
     font-size: .75rem;
     text-transform: uppercase;
 }
-
+.header-nav { 
+    display: none; 
+}
 .menu-principal {
-    gap: 2rem;
+    gap: 1rem;
 }
-
-.menu-social {
-    gap: 2rem;
+.menu-social{
+    gap: 1rem;
 }
-
-.menu-social .menu-icon:hover {
-    color: var(--hover-social);
-}
-
 .btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.625rem;
     width: 100%;
     background: transparent;
     border-radius: 3rem;
-    color: var(--primary-color);
     border: none;
-    padding: .5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
+    transition: ease-in-out .3s;
     cursor: pointer;
+    color: var(--primary-color);
 }
-
-.btn:hover {
+.btn:hover{
     transform: scale(1.05);
-    transition: ease-in-out .5s;
+    transition: ease-in-out .3s;
 }
-
 .btn span, .btn i {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-transform: uppercase;
 }
-
 .btn-primary span {
     color: var(--primary-color);
 }
-
 .btn-primary {
-    border: 1px solid var(--hover-menu);
+    border: 1px solid var(--primary-color);
 }
-
-/* Main */
 #home {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem; 
 }
-
 .main-content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
-
 .video iframe {
     width: 100%;
     aspect-ratio: 16/9;
 }
-
-#home, .projetos, .sobre, .contato {
-    /* padding: 5rem 10rem; */
+#home, .projetos, .sobre, .contato{
     padding: 2.5rem 1rem;
 }
-
-/* Projetos */
-
+.tecnologias {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 6.25rem 1rem 2rem;
+    background: var(--secondary-bg-color);
+    margin-top: -5.5rem;
+}
+.tecnologias h2 {
+    font-size: 2rem;
+    text-transform: none;
+    letter-spacing: normal;
+    text-align: start;
+}
+.tecnologias-lista {  
+    display: flex;
+    flex-flow: row wrap;
+    gap: .5rem;
+}
+.tecnologia-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    border: 3px solid var(--secondary-border-color);
+    border-radius: 5rem;
+}
+.tecnologia-logo{
+    height: 2.4rem;
+}
 .projetos {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2rem;    
 }
-
-.projetos-container {
+.projeto-container {
     display: flex;
     flex-direction: column;
     gap: 4rem;
 }
-
 .projeto-card {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-
 .card-cover {
+    width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    object-position: center;
+}
+.card-body{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     gap: 1rem;
 }
-
-.card-title {  /* H3 */
+.card-title {
     font-size: 2rem;
-    color: var(--cor-titulo);
-    font-weight: 100;
-    /* font-family: ; */
+    color: var(--title-color);
+    font-weight: 400;
 }
-
-.card-descricao {  /*P = paragrafo*/
-    color: var(--cor-texto);
-   /*  font-size: ;
-    font-family: ; */
+.card-descricao {
+    color: var(--title-color);
 }
-
-.card-lista, .sobre-lista { /*estrutura lista */
+.card-lista .sobre-lista{
     margin-left: 1.25rem;
-    margin-top: 15px;
-    margin-bottom: 25px;
 }
-
-.card-item, .sobre-item{  /* topicos lista */
-    /* list-style: none; */
-    margin-top: 5px;
+.card-item, .sobre-item{
     list-style: disc;
 }
-
 .card-button, .card-descricao{
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: center;
 }
-
 .card-button .btn {
     padding: .65rem 1.25rem;
-    margin-top: 15px;
 }
-
 .card-button .btn span {
     font-size: 1rem;
-    /* color: var(--texto-botao); */
 }
-
+.card-body .tecnologias-lista {
+    gap: .75rem;
+}
+.card-body .tecnologia-item{
+    width: 4rem;
+    height: 4rem;
+}
+.card-body .tecnologia-logo{
+    height: 2rem;
+}
 .projetos .btn {
     width: auto;
     margin: auto;
 }
-
-
-
-/* Responsividade Responsivo */
-
+/* Sobre */
+.sobre {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.sobre-content1, .sobre-content2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+.sobre-logo {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    border-radius: 50rem;
+    border:  8px solid var(--primary-color);
+}
+.sobre-descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+.sobre-icones {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+.sobre-icones i {
+    font-size: 1.25rem;
+}
+.sobre-content2 .col1, 
+.sobre-content2 .col2 {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 2rem;
+}
+.sobre-content2 .col1 .row1, 
+.sobre-content2 .col1 .row2 {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.accordion-header {
+    width: 100%;
+    display: flex;
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--primary-border-color);
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+.accordion-header span {
+    color: var(--title-color);
+}
+.accordion-header.start {
+    border-radius: 0.25rem 0.25rem 0rem 0rem;
+}
+.accordion-header.end, 
+.accordion-item.active .accordion-body.end {
+    border-radius: 0rem 0rem 0.25rem 0.25rem;
+}
+.accordion-item.active .accordion-item.end {
+    border-radius: 0;
+}
+.accordion-body {
+    display: none;
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .625rem;
+    border: 1px solid var(--primary-border-color);
+}
+.accordion-item.active .accordion-header {
+    background: var(--secondary-bg-color);
+}
+.accordion-item.active .accordion-body {
+    display: flex;
+}
+.accordion-item.active .bi-caret-down-fill {
+    transform: rotate(180deg);
+}
+/* Contato */
+.contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border-top: 1px solid var(--primary-border-color);
+    border-bottom: 1px solid var(--secondary-border-color);
+}
+.contato p {
+    text-align: center;
+}
+.contato .btn {
+    width: auto; /**/
+}
+.contato .email {
+    text-transform: uppercase;
+}
+/* Roda Pé */
+footer {
+    margin-bottom: 5rem;  
+}
+footer p {
+    font-size: .875rem;
+    text-align: center;
+    padding: 1rem;
+}
+/* Responsividade */
 @media (min-width: 768px) {
     #header {
-       position: fixed;
-       padding: 1rem 6rem;
+        position: fixed;
+        border-bottom: 1px solid var(--primary-border-color);
+        padding: 1rem 6rem;
+        background: var(--primary-bg-color);
     }
     .nav-mobile {
         display: none;
     }
-    .header-nav{
+    .header-nav { 
         display: flex;
     }
-    .header-nav, 
+    .header-nav,
     .header-toggle {
         min-width: 30%;
     }
@@ -338,41 +485,88 @@ p {
     h2 {
         font-size: 3rem;
     }
-    #home, .projetos, .sobre, .contato  {
+    #home, .projetos, .sobre {
         padding: 8rem 6rem 4rem 6rem;
     }
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .tecnologias {
+        padding: 6.25rem 6rem 2rem 6rem;
+        margin-top: -6rem;
+    }
+    .contato {
+        padding: 6rem;
+    }
+    .contato p {
+        width: 80%;
+    }
+    footer {
+        margin: 0;
+    }
 }
-
-
 @media (min-width: 992px) {
     .projeto-card {
         flex-direction: row;
     }
-    
+    .projeto-card.card-reverse {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
     .card-cover {
         width: 55%;
     }
-        
+    .sobre {
+        gap: 5rem;
+    }
+    .sobre-content1, .sobre-content2 {
+        display: grid;
+        grid-template-columns: 34% 60%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+    .sobre-descricao h2 {
+        text-align: left;
+    }
+    .descricao-button {
+        justify-content: flex-start;
+    }
 }
-
 @media (min-width: 1200px) {
-
     h2 {
         font-size: 4rem;
     }
-
     h3 {
         font-size: 2.5rem;
     }
-
     #home {
         padding: 10rem 6rem 2rem;
     }
-
     .main-content .btn {
         width: auto;
     }
-    
+    .tecnologias {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10rem 6rem 4rem;
+    }
+    .tecnologias h2 {
+        font-size: 3rem;
+        width: 55%;
+    }
+    .tecnologias-lista{
+        gap: 1rem;
+    }
+    .tecnologia-item {
+        width: 6rem;
+        height: 6rem;
+    }
+    .tecnologia-logo {
+        height: 3rem;
+    }
     p, span, li {
         font-size: 1.15rem;
     }
@@ -394,7 +588,7 @@ p {
     .header {
         padding: 12rem 15rem 2rem;
     }
-    .projetos, .sobre, .contato {
+    .tecnologias, .projetos, .sobre {
         padding: 10rem 15rem 4rem;
     }
 }
