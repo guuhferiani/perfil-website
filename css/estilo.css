@@ -11,7 +11,7 @@
     --icone-tema: #e8e8e8;
     --hover-social: #169adc;
 
-    --cor-titulo: #c042eb;
+    --cor-titulo: #d9d9d9;
 
     --titulo-accordion: #e8e8e8;
     --body-accordion: #1d1d1d;
@@ -21,7 +21,7 @@
 
 :root[data-theme="light"] {
     --primary-color: #1d1d1d;
-    --primary-bg: #ebebeb;
+    --primary-bg: #d9d9d9;
     --hover-menu: #898989;
     --menu-texto: #1d1d1d;
     --hover-social: #169adc;
@@ -78,7 +78,7 @@ h2 {
 
 h3 {
     font-family: "Open Sans", system-ui;
-    color: #78ff02;
+    color: var(--cor-titulo);
 }
 
 p,
@@ -237,11 +237,11 @@ p {
     text-transform: uppercase;
 }
 
-.btn-primary span {
+.btn-primario span {
     color: var(--primary-color);
 }
 
-.btn-primary {
+.btn-primario {
     border: 1px solid var(--hover-menu);
 }
 
@@ -486,8 +486,20 @@ p {
     text-transform: uppercase;
 }
 
+/* Roda Pé == FOOTER */
+footer {
+    margin-bottom: 5rem;
+}
 
+footer p {
+    font-size: .875rem;
+    text-align: center;
+    padding: 1rem;
+}
 
+footer a {
+    color: #169adc;
+}
 
 
 /* Responsividade Responsivo */
