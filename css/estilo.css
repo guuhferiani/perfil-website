@@ -13,6 +13,8 @@
 
     --titulo-accordion: #e8e8e8;
     --body-accordion: #1d1d1d;
+
+    --border-color: #e8e8e8;
 }
 
 :root[data-theme="light"] {
@@ -27,6 +29,8 @@
 
     --titulo-accordion: #161616;
     --body-accordion: #ececec;
+
+    --border-color: #1d1d1d;
 }
 
 /* CSS Geral */
@@ -423,10 +427,31 @@ p {
     transform: rotate(180deg);
 }
 
+/* Contato */
 
+.contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border-top: 1px solid var(--border-color); /* variavel borda */
+    border-bottom: 1px solid var(--border-color); 
+}
 
+.contato p {
+    text-align: center;
+    /* font-family: ""; */
+    /* color: var(); */
+}
 
+.contato .btn {
+    width: auto;  /*correção*/
+}
 
+.contato .email {
+    text-transform: uppercase;
+}
 
 
 
@@ -458,8 +483,11 @@ p {
     h2 {
         font-size: 3rem;
     }
-    #home, .projetos, .sobre, .contato  {
+    #home, .projetos, .sobre  {
         padding: 8rem 6rem 4rem 6rem;
+    }
+    .contato {
+        padding: 6rem;
     }
 }
 
