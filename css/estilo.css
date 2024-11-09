@@ -1,9 +1,11 @@
 :root,
 :root[data-theme="dark"] {
-    --primary-color: #ebebeb; /*color = texto */
-    --primary-bg: #1d1d1d;  /*bg = fundo */
+    --primary-color: #ebebeb;
+    /*color = texto */
+    --primary-bg: #1d1d1d;
+    /*bg = fundo */
     --hover-menu: #898989;
-    --menu-texto:  #ebebeb;
+    --menu-texto: #ebebeb;
 
     --icon-color: #169adc;
     --icone-tema: #e8e8e8;
@@ -22,7 +24,7 @@
     --primary-bg: #ebebeb;
     --hover-menu: #898989;
     --menu-texto: #1d1d1d;
-    --hover-social:#169adc;
+    --hover-social: #169adc;
 
     --icone-tema: #1f1f1f;
     --cor-titulo: #1d1d1d;
@@ -34,28 +36,29 @@
 }
 
 /* CSS Geral */
-body{
-    background: var(--primary-bg);  /* fundo */
+body {
+    background: var(--primary-bg);
+    /* fundo */
     color: var(--primary-color);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 22px; 
+    font-size: 22px;
 }
 
 html[data-theme="light"] .logo {
     filter: invert(0);
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--primary-color);
 }
 
-a:hover{
-  color: var(--hover-menu)
+a:hover {
+    color: var(--hover-menu)
 }
 
 i {
-  color: var(--icon-color);
+    color: var(--icon-color);
 }
 
 b {
@@ -78,7 +81,9 @@ h3 {
     color: #78ff02;
 }
 
-p, span, li{
+p,
+span,
+li {
     font-size: 1rem;
 }
 
@@ -88,12 +93,13 @@ p {
 
 
 /* Reset CSS  */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
 }
+
 /* fim reset  */
 
 /* header  */
@@ -111,9 +117,12 @@ p {
 }
 
 /* .header-logo .logo */
-.logo {  /* img */
-    width: 3.25rem;  /* comprimento */
-    height: 3.25rem;  /* altura  */
+.logo {
+    /* img */
+    width: 3.25rem;
+    /* comprimento */
+    height: 3.25rem;
+    /* altura  */
 }
 
 .header-toggle {
@@ -127,7 +136,8 @@ p {
     cursor: pointer;
 }
 
-.menu {   /* UL */
+.menu {
+    /* UL */
     display: flex;
     align-items: center;
     background: var(--primary-bg);
@@ -152,7 +162,8 @@ p {
 /* Menu Mobile */
 
 .menu-mobile {
-    width: 100vw; /*V W = Viewport Width */
+    width: 100vw;
+    /*V W = Viewport Width */
     position: fixed;
     bottom: 0;
     justify-content: space-between;
@@ -170,15 +181,17 @@ p {
 .menu-link.active .menu-text,
 .menu-link:hover .menu-icon,
 .menu-link:hover .menu-text {
-    color: #169adc;  /*cor de link */
+    color: #169adc;
+    /*cor de link */
 }
 
-.menu-icon, .menu-text {
+.menu-icon,
+.menu-text {
     color: var(--menu-texto);
     font-weight: 600;
 }
 
-.menu-icon{
+.menu-icon {
     font-size: 1.5rem;
 }
 
@@ -218,7 +231,8 @@ p {
     transition: ease-in-out .5s;
 }
 
-.btn span, .btn i {
+.btn span,
+.btn i {
     font-size: 1.5rem;
     text-transform: uppercase;
 }
@@ -238,6 +252,11 @@ p {
     gap: 4rem;
 }
 
+.slide {
+    justify-content: center;
+    align-items: center;
+}
+
 .main-content {
     display: flex;
     flex-direction: column;
@@ -249,7 +268,11 @@ p {
     aspect-ratio: 16/9;
 }
 
-#home, .projetos, .sobre, .contato {
+#home,
+.slide,
+.projetos,
+.sobre,
+.contato {
     /* padding: 5rem 10rem; */
     padding: 2.5rem 1rem;
 }
@@ -282,32 +305,39 @@ p {
     gap: 1rem;
 }
 
-.card-title {  /* H3 */
+.card-title {
+    /* H3 */
     font-size: 2rem;
     color: var(--cor-titulo);
     font-weight: 100;
     /* font-family: ; */
 }
 
-.card-descricao {  /*P = paragrafo*/
+.card-descricao {
+    /*P = paragrafo*/
     color: var(--cor-texto);
-   /*  font-size: ;
+    /*  font-size: ;
     font-family: ; */
 }
 
-.card-lista, .sobre-lista { /*estrutura lista */
+.card-lista,
+.sobre-lista {
+    /*estrutura lista */
     margin-left: 1.25rem;
     margin-top: 15px;
     margin-bottom: 25px;
 }
 
-.card-item, .sobre-item{  /* topicos lista */
+.card-item,
+.sobre-item {
+    /* topicos lista */
     /* list-style: none; */
     margin-top: 5px;
     list-style: disc;
 }
 
-.card-button, .card-descricao{
+.card-button,
+.card-descricao {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -330,7 +360,7 @@ p {
 
 /* Sobre */
 
-.sobre { 
+.sobre {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -342,10 +372,10 @@ p {
     object-position: center;
     pointer-events: none;
     border-radius: 50rem;
-    border:  8px solid var(--primary-color);
+    border: 8px solid var(--primary-color);
 }
 
-.sobre-descricao { 
+.sobre-descricao {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -372,22 +402,22 @@ p {
     gap: 2rem;
 }
 
-.sobre-conteudo2 .col1, 
-.sobre-conteudo2 .col2 { 
+.sobre-conteudo2 .col1,
+.sobre-conteudo2 .col2 {
     display: flex;
     flex-direction: column;
     text-align: justify;
     gap: 2rem;
 }
 
-.sobre-conteudo2 .col1 .row1, 
-.sobre-conteudo2 .col1 .row2 { 
+.sobre-conteudo2 .col1 .row1,
+.sobre-conteudo2 .col1 .row2 {
     display: flex;
     flex-direction: column;
     gap: .5rem;
 }
 
-.accordion-header { 
+.accordion-header1 {
     width: 100%;
     display: flex;
     padding: 0.75rem 1rem;
@@ -400,12 +430,12 @@ p {
     transition: ease-in-out .3s;
 }
 
-.accordion-header span {
+.accordion-header1 span {
     color: var(--titulo-accordion);
 }
 
 /* esconder as respostas */
-.accordion-body {  
+.accordion-body1 {
     display: none;
     padding: 1.25rem;
     flex-direction: column;
@@ -414,16 +444,17 @@ p {
     border: 1px solid var(--primary-color);
 }
 
-.accordion-item.active .accordion-header {
+.accordion-item.active .accordion-header1 {
     background: var(--body-accordion);
 }
 
 /* conteudo aparece após o click */
-.accordion-item.active .accordion-body {
+.accordion-item.active .accordion-body1 {
     display: flex;
 }
 
-.accordion-item.active .bi-caret-down-fill {  /* adicionar classe no icone */
+.accordion-item.active .bi-caret-down-fill {
+    /* adicionar classe no icone */
     transform: rotate(180deg);
 }
 
@@ -435,8 +466,9 @@ p {
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    border-top: 1px solid var(--border-color); /* variavel borda */
-    border-bottom: 1px solid var(--border-color); 
+    border-top: 1px solid var(--border-color);
+    /* variavel borda */
+    border-bottom: 1px solid var(--border-color);
 }
 
 .contato p {
@@ -446,7 +478,8 @@ p {
 }
 
 .contato .btn {
-    width: auto;  /*correção*/
+    width: auto;
+    /*correção*/
 }
 
 .contato .email {
@@ -457,41 +490,50 @@ p {
 
 
 
-
-
-
 /* Responsividade Responsivo */
 
 @media (min-width: 768px) {
     #header {
-       position: fixed;
-       padding: 1rem 6rem;
+        position: fixed;
+        padding: 1rem 6rem;
     }
+
     .nav-mobile {
         display: none;
     }
-    .header-nav{
+
+    .header-nav {
         display: flex;
     }
-    .header-nav, 
+
+    .header-nav,
     .header-toggle {
         min-width: 30%;
     }
+
     h1 {
         font-size: 5rem;
     }
+
     h2 {
         font-size: 3rem;
     }
-    #home, .projetos, .sobre  {
+
+    #home,
+    .slide,
+    .projetos,
+    .sobre {
         padding: 8rem 6rem 4rem 6rem;
     }
+
     .contato {
         padding: 6rem;
     }
 }
 
-@media (min-width: 992px) { /*apartir de 992 */
+@media (min-width: 992px) {
+
+    /*apartir de 992 */
     .projeto-card {
         flex-direction: row;
     }
@@ -500,20 +542,24 @@ p {
         flex-direction: row-reverse;
         justify-content: space-between;
     }
-    
+
     .card-cover {
         width: 55%;
     }
+
     .sobre {
         gap: 5rem;
     }
-    .sobre-conteudo1, 
-    .sobre-conteudo2 { 
+
+    .sobre-conteudo1,
+    .sobre-conteudo2 {
         display: grid;
         grid-template-columns: 40% 60%;
     }
-        
-} /* fim 992px */
+
+}
+
+/* fim 992px */
 
 @media (min-width: 1200px) {
 
@@ -532,29 +578,41 @@ p {
     .main-content .btn {
         width: auto;
     }
-    
-    p, span, li {
+
+    p,
+    span,
+    li {
         font-size: 1.15rem;
     }
-    .card-button .btn, 
+
+    .card-button .btn,
     .descricao-button .btn {
         width: auto;
     }
 }
+
 @media (min-width: 1400px) {
     h1 {
         font-size: 6.25rem;
     }
-    h2{
+
+    h2 {
         font-size: 4.5rem;
     }
+
     h3 {
         font-size: 3.25rem;
     }
+
     .header {
         padding: 12rem 15rem 2rem;
     }
-    .projetos, .sobre, .contato {
+
+    .projetos, 
+    .slide
+    .sobre,
+    .contato {
         padding: 10rem 15rem 4rem;
     }
 }
+
