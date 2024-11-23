@@ -628,3 +628,25 @@ footer a {
     }
 }
 
+
+#slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;  /* Adiciona um pequeno padding para não encostar nas bordas */
+}
+  
+#carouselExampleIndicators {
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima do carrossel, ajustando para telas grandes */
+}
+  
+.carousel-inner {
+    width: 100%; /* Garante que a área interna do carrossel ocupe 100% da largura disponível */
+}
+  
+.carousel-item img {
+    width: 100%; /* Garante que as imagens ocupem 100% da largura do item do carrossel */
+    max-width: 100%; /* Restringe o tamanho máximo da imagem */
+    height: auto;  /* Mantém a proporção da imagem */
+}
