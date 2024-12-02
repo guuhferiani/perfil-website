@@ -45,7 +45,7 @@ body {
 }
 
 html[data-theme="light"] .logo {
-    filter: invert(0);
+    filter: invert(1);
 }
 
 a {
